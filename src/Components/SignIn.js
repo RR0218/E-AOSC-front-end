@@ -18,7 +18,7 @@ function SignIn() {
      e.preventDefault();
         try {
             // make axios post request
-            const response = await axios.post("https://eaosc-backend.herokuapp.com/verify/",{email,password});
+            const response = await axios.post("https://eaosc-backend.herokuapp.com/verify_password/",{email,password});
             if(response.data !== 'No Record Found' && response.data!==false)
             { 
               localStorage.setItem('id',response.data)
