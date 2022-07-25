@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 
 
 export default function Orders() {
-    const [id, setId] = useState(parseInt(localStorage.getItem('id')))
+    const id = localStorage.getItem('id')
     const [lawyerid, setLawyerId] = useState(0)
     let iscompleted = false
     const url = 'https://eaosc-backend.herokuapp.com/user-orders/'+id
