@@ -22,7 +22,7 @@ export default function Orders() {
     useEffect(() => {
         setLoading(true)
         const loadOrders = async () => {
-          await axios.get(url)
+          await axios.get('https://eaosc-backend.herokuapp.com/user-orders/'+id')
           .then(response =>{
             if(Array.isArray(response.data))
             {
@@ -137,7 +137,7 @@ export default function Orders() {
                 <h4 className='display-7 fw-border'>Your Orders</h4>
                 <hr />
             </div>
-            {loading ? <Loading/>  : <ShowLawyers/>}      
+            {<ShowLawyers/>}      
         </div>
       </div>
       <Modal show={show} onHide={handleClose}>
