@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 
 
 export default function Orders() {
-    const id = localStorage.getItem('id')
+    const [id, setId] = useState(parseInt(localStorage.getItem('id')))
     const [lawyerid, setLawyerId] = useState(0)
     let iscompleted = false
     const url = 'https://eaosc-backend.herokuapp.com/user-orders/'+id
@@ -18,11 +18,11 @@ export default function Orders() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     const handleClose = () => setShow(false);
-        
+
     useEffect(() => {
         setLoading(true)
         const loadOrders = async () => {
-          await axios.get('https://eaosc-backend.herokuapp.com/user-orders/'+id')
+          await axios.get(url)
           .then(response =>{
             if(Array.isArray(response.data))
             {
@@ -33,18 +33,18 @@ export default function Orders() {
         }  
         loadOrders();
       },[reload]);
- 
-    
+
+
   const handleCompleted = async (order_id,lawyer_id) =>{
     console.log(lawyer_id)
     const url1= 'https://eaosc-backend.herokuapp.com/order_completed/'+order_id
     await axios.get(url1)
           .then(response =>{
-            
+
           })  
     await axios.get('https://eaosc-backend.herokuapp.com/inc_orders/'+lawyer_id)
           .then(response =>{
-            
+
           })  
           setReload(!reload)
     }    
@@ -67,11 +67,11 @@ export default function Orders() {
         try {
             // make axios post request
             const response = await axios.post("https://eaosc-backend.herokuapp.com/add_rating/",req);
-           
+
         } catch(error) {
             console.log(error)
         } 
-        
+
     //    setShow(false)
     //    submit = false
     // }
@@ -86,7 +86,7 @@ export default function Orders() {
   const Loading = () =>{
     return(
         <>
-            Loading...
+            Loading....
         </>
     )
   }
@@ -127,7 +127,7 @@ export default function Orders() {
     </>
     )
   } 
- 
+
   return (
     <div>  
         <NavBar/>  
@@ -137,7 +137,7 @@ export default function Orders() {
                 <h4 className='display-7 fw-border'>Your Orders</h4>
                 <hr />
             </div>
-            {loading ? <Loading/>:<ShowLawyers/>}      
+            {loading ? <Loading/>  : <ShowLawyers/>}      
         </div>
       </div>
       <Modal show={show} onHide={handleClose}>
