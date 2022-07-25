@@ -137,7 +137,7 @@ export default function Orders() {
                 <h4 className='display-7 fw-border'>Your Orders</h4>
                 <hr />
             </div>
-            {<ShowLawyers/>}      
+            {loading ? <Loading/>:<ShowLawyers/>}      
         </div>
       </div>
       <Modal show={show} onHide={handleClose}>
