@@ -26,8 +26,8 @@ export default function Orders() {
           .then(response =>{
             if(Array.isArray(response.data))
             {
-            const updatedlist = response.data.filter((x)=>x.user_id===id)
-            setData(updatedlist)
+            //const updatedlist = response.data.filter((x)=>x.user_id===id)
+            setData(response.data)
             setLoading(false);
             }
           })
