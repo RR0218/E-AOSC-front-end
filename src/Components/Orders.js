@@ -22,12 +22,13 @@ export default function Orders() {
     useEffect(() => {
         setLoading(true)
         const loadOrders = async () => {
-          await axios.get(url)
+          await axios.get('https://eaosc-backend.herokuapp.com/orders')
           .then(response =>{
             if(Array.isArray(response.data))
             {
-             setData(response.data)
-             setLoading(false);
+            const updatedlist = response.data.filter((x)=>x.user_id===id)
+            setData(updatedlist)
+            setLoading(false);
             }
           })
         }  
