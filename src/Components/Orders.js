@@ -10,7 +10,7 @@ export default function Orders() {
     const [id, setId] = useState(parseInt(localStorage.getItem('id')))
     const [lawyerid, setLawyerId] = useState(0)
     let iscompleted = false
-    const url = 'https://eaosc-backend.herokuapp.com/user-orders/'+id
+    const url = 'https://eaosc-backend.herokuapp.com/user_orders/'+id
     const [data,setData]= useState([]);
     const [loading,setLoading]= useState(true);
     const [reload, setReload] = useState(false)
