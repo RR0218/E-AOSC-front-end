@@ -86,7 +86,7 @@ export default function Orders() {
   const Loading = () =>{
     return(
         <>
-            Loading....
+            Loading...
         </>
     )
   }
