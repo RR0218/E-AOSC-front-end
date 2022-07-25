@@ -62,7 +62,7 @@ return (
         <Modal.Header closeButton>
           <Modal.Title>Invalid Information</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Invalid Email or Phone Number!..</Modal.Body>
+        <Modal.Body>Invalid Information...</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
