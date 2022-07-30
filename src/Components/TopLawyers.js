@@ -13,7 +13,7 @@ export default function TopLawyers() {
       useEffect(() => {
         setLoading(true)
         const loadLawyers = async () => {
-          await axios.get('http://127.0.0.1:8000/lawyers/rating/')
+          await axios.get('https://e-aosc.herokuapp.com/lawyers/rating/')
           .then(response =>{
             if(Array.isArray(response.data))
             {
