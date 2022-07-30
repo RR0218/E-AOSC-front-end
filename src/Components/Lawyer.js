@@ -14,7 +14,7 @@ export default function Lawyer() {
     const {id} = useParams()
     const [lawyer,setLawyer] = useState([])
     const [loading,setLoading] = useState(false)
-    const url = 'http://127.0.0.1:8000/lawyer/'+id
+    const url = 'https://e-aosc.herokuapp.com/lawyer/'+id
         
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -46,7 +46,7 @@ export default function Lawyer() {
             const lawyer_name = lawyer.name
             const field = lawyer.speciality
             console.log(typeof user_id+typeof lawyer_id+lawyer_name+field)
-            const response = await axios.post("http://127.0.0.1:8000/place_order/", {user_id,lawyer_id,lawyer_name, field});
+            const response = await axios.post("https://e-aosc.herokuapp.com/place_order/", {user_id,lawyer_id,lawyer_name, field});
             console.log(response)
             if(response.data === 'Order Placed')
             {
