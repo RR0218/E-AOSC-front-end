@@ -10,7 +10,7 @@ export default function AdminShowUsers() {
 
     useEffect(() => {
         const loadUsers = async () => {
-          await axios.get('http://127.0.0.1:8000/all_users')
+          await axios.get('https://e-aosc.herokuapp.com/all_users')
           .then(response =>{
             if(Array.isArray(response.data))
             {
@@ -22,7 +22,7 @@ export default function AdminShowUsers() {
       },[reload]);
 
       const deleteUser = async(user_id)=>{
-        await axios.get('http://127.0.0.1:8000/delete_user/'+user_id)
+        await axios.get('https://e-aosc.herokuapp.com/delete_user/'+user_id)
           .then(response =>{
                 setReload(!reload)
           })
