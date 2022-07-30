@@ -15,7 +15,7 @@ export default function Lawyers() {
       useEffect(() => {
         setLoading(true)
         const loadLawyers = async () => {
-          await axios.get('http://127.0.0.1:8000/all_lawyers')
+          await axios.get('https://e-aosc.herokuapp.com/all_lawyers')
           .then(response =>{
             if(Array.isArray(response.data))
             {
