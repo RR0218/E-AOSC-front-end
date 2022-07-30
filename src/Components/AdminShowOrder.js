@@ -10,7 +10,7 @@ export default function AdminShowOrder() {
 
     useEffect(() => {
         const loadOrders = async () => {
-          await axios.get('http://127.0.0.1:8000/orders')
+          await axios.get('https://e-aosc.herokuapp.com/orders')
           .then(response =>{
             if(Array.isArray(response.data))
             {
@@ -22,7 +22,7 @@ export default function AdminShowOrder() {
       },[reload]);
 
       const deleteOrder = async(order_id)=>{
-        await axios.get('http://127.0.0.1:8000/delete_order/'+order_id)
+        await axios.get('https://e-aosc.herokuapp.com/delete_order/'+order_id)
           .then(response =>{
                 setReload(!reload)
           })
