@@ -84,7 +84,7 @@ return (
     <Row>
         <Col>
         <FloatingLabel controlId="_country" label="Country" className="mb-3" size='sm'>
-            <Form.Control type="text" placeholder="Country" onChange={(e)=>setCountry(e.target.value)}/>
+            <Form.Control type="text" placeholder="State" onChange={(e)=>setCountry(e.target.value)}/>
         </FloatingLabel>    
         </Col>
         <Col>
