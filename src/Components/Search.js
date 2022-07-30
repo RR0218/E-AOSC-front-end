@@ -14,7 +14,7 @@ export default function Search() {
   const [isresultfound, setIsresultfound] = useState(true)
 
   const SearchResults = async()=>{
-    await axios.get('http://127.0.0.1:8000/search/'+formvalue)
+    await axios.get('https://e-aosc.herokuapp.com/search/'+formvalue)
           .then(response =>{
             console.log(response.data)
              if(response.data !== "No Results Found" && Array.isArray(response.data)){
