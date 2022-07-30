@@ -21,7 +21,7 @@ export default function UpdatePassword() {
                 "user_id": id,
                 "password": password
             }
-            const response = await axios.patch("http://127.0.0.1:8000/update_user_password/",req);
+            const response = await axios.patch("https://e-aosc.herokuapp.com/update_user_password/",req);
             if(response.data==='Password Updated Successfully')
             {
                 setMsg("Password Updated Successfully")
