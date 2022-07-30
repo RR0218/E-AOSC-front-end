@@ -12,7 +12,7 @@ export default function AdminShowLawyers() {
 
     useEffect(() => {
         const loadLawyers = async () => {
-          await axios.get('http://127.0.0.1:8000/all_lawyers')
+          await axios.get('https://e-aosc.herokuapp.com/all_lawyers')
           .then(response =>{
             if(Array.isArray(response.data))
             {
@@ -24,7 +24,7 @@ export default function AdminShowLawyers() {
       },[reload]);
 
       const deleteLawyer = async(lawyer_id)=>{
-        await axios.get('http://127.0.0.1:8000/delete_lawyer/'+lawyer_id)
+        await axios.get('https://e-aosc.herokuapp.com/delete_lawyer/'+lawyer_id)
           .then(response =>{
                 setReload(!reload)
           })
