@@ -37,7 +37,7 @@ function AdminAddLawyer() {
                 'city': city,
                 'area_of_practice': field
             }
-            const response = await axios.post("http://127.0.0.1:8000/new_lawyer/",req);
+            const response = await axios.post("https://e-aosc.herokuapp.com/new_lawyer/",req);
             console.log(response.data)
             if(response.data==='Lawyer Added Successfully')
             {
