@@ -18,7 +18,7 @@ function AdminSignIn() {
      e.preventDefault();
         try {
             // make axios post request
-            const response = await axios.post("http://127.0.0.1:8000/verify_admin/",{email,password});
+            const response = await axios.post("https://e-aosc.herokuapp.com/verify_admin/",{email,password});
             if(response.data !== 'No Record Found' && response.data!==false)
             { 
               localStorage.setItem('id',response.data)
