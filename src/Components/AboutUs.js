@@ -22,7 +22,7 @@ export default function AboutUs() {
                 <br></br>
                 You Can Book, Rate and Search Lawyers. Rating Lawyers will result in better and accurate
                 <br></br>
-                Reccomendations. 
+                Reccomendations based on our Collaborative Filtering Model. 
               </p>
               </div>
             </div>
