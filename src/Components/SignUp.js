@@ -35,7 +35,7 @@ function SignUp() {
         e.preventDefault();
         try {
             // make axios post request
-            const response = await axios.post("http://127.0.0.1:8000/new_user/",{name,email,phone,password,country,city});
+            const response = await axios.post("https://e-aosc.herokuapp.com/new_user/",{name,email,phone,password,country,city});
             //console.log(response.data)
             if(response.data==='User Added Successfully')
             {
