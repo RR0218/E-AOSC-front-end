@@ -9,7 +9,7 @@ import userlogo from './user.png'
 export default function RecommendedLawyers() {
     const id = localStorage.getItem('id')
     console.log("id recom"+id) 
-    const url = 'http://127.0.0.1:8000/highest_rated/'+id
+    const url = 'https://e-aosc.herokuapp.com/highest_rated/'+id
     const [data,setData]= useState([]);
     const [loading,setLoading]= useState(false);
     const [isrecommend, setIsRecom] = useState(false)
