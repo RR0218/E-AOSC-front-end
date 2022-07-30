@@ -37,11 +37,11 @@ export default function Orders() {
     
   const handleCompleted = async (order_id,lawyer_id) =>{
     console.log(lawyer_id)
-    await axios.get('http://127.0.0.1:8000/order_completed/'+order_id)
+    await axios.get('https://e-aosc.herokuapp.com/order_completed/'+order_id)
           .then(response =>{
             
           })  
-    await axios.get('http://127.0.0.1:8000/inc_orders/'+lawyer_id)
+    await axios.get('https://e-aosc.herokuapp.com/inc_orders/'+lawyer_id)
           .then(response =>{
             
           })  
@@ -65,7 +65,7 @@ export default function Orders() {
           }
         try {
             // make axios post request
-            const response = await axios.post("http://127.0.0.1:8000/add_rating/",req);
+            const response = await axios.post("https://e-aosc.herokuapp.com/add_rating/",req);
            
         } catch(error) {
             console.log(error)
